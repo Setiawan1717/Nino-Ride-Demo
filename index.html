@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nino Ride | Bengkel Mobil dan Layanan Darurat di Tlogomas, Malang (Demo)</title>
+<meta name="description" content="Contoh desain website untuk Bengkel Mobil Nino Ride di Tlogomas, Malang: servis mobil injeksi, ganti oli, home service, dan layanan darurat.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Nino Ride | Bengkel Mobil di Tlogomas, Malang (Demo)">
+<meta property="og:description" content="Contoh desain website, bukan website resmi.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Cpath d='M9 6h6l-4 20H5zM19 6h6l-4 20h-6z' fill='%23FFC400'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000;--panel:#151515;--line:#2c2c2c;--yellow:#FFC400;--yellow-deep:#E5AC00;
+  --paper:#ECECE7;--white:#fff;--muted:#a9a9a4;--ink-soft:#50504c;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;--body:"Barlow",system-ui,sans-serif;
+  --gutter:clamp(16px,3vw,40px);--ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--black);color:var(--white);font:400 17px/1.6 var(--body)}
+img{display:block;width:100%;height:100%;object-fit:cover;background:#222}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+button,input,select,textarea{font:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.paper :focus-visible{outline-color:#000}
+.wrap{padding-inline:var(--gutter);max-width:1520px;margin-inline:auto}
+.title{font:italic 800 clamp(44px,6.4vw,92px)/.96 var(--display);text-transform:uppercase;letter-spacing:0}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border-radius:4px;background:var(--panel);color:var(--white);font-size:14px;font-weight:500}
+.tag::before{content:"";width:8px;height:8px;background:var(--yellow);transform:skewX(-14deg)}
+.paper .tag{background:#000}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 22px;border:1px solid transparent;border-radius:6px;font-weight:600;text-decoration:none;cursor:pointer;transition:background-color .16s ease,color .16s ease,transform .12s var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-y{background:var(--yellow);color:#000}
+.btn-g{background:rgba(0,0,0,.55);color:#fff;border-color:rgba(255,255,255,.34)}
+.btn-k{background:#000;color:#fff}
+@media(hover:hover){.btn-y:hover{background:#ffd440}.btn-g:hover{background:#fff;color:#000}.btn-k:hover{background:#2b2b2b}}
+
+/* demo bar */
+.demo{background:var(--yellow);color:#000;padding:8px var(--gutter);font-size:14.5px;font-weight:600;text-align:center;line-height:1.35}
+
+/* header */
+.head{position:sticky;top:0;z-index:30;background:rgba(0,0,0,.86);backdrop-filter:blur(10px);border-bottom:1px solid #1d1d1d}
+.head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.logo{display:inline-flex;align-items:center;gap:9px;font:italic 800 29px/1 var(--display);color:var(--yellow);text-decoration:none;text-transform:uppercase}
+.bars{display:inline-flex;gap:3px}.bars i{width:6px;height:22px;background:var(--yellow);transform:skewX(-14deg)}
+.nav{display:flex;gap:4px}
+.nav a{padding:7px 13px;border-radius:5px;font-size:15.5px;font-weight:500;text-decoration:none;color:#dcdcd8;transition:background-color .15s ease}
+@media(hover:hover){.nav a:hover{background:var(--panel)}}
+.head .btn{min-height:44px;padding:8px 16px;font-size:15.5px}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:6px;background:none;color:#fff;cursor:pointer}
+.burger svg{width:22px;height:22px;margin:auto}
+
+/* hero */
+.hero{position:relative;min-height:min(calc(100svh - 104px),820px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero>img{position:absolute;inset:0;z-index:-2;object-position:center 35%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.62) 48%,rgba(0,0,0,.14) 100%),linear-gradient(0deg,#000 0%,rgba(0,0,0,0) 34%)}
+.hero .wrap{width:100%;padding-block:clamp(52px,8vw,92px);display:grid;grid-template-columns:1fr auto;align-items:end;gap:32px}
+.hero h1{font:italic 800 clamp(66px,12.2vw,186px)/.86 var(--display);text-transform:uppercase;color:var(--yellow);margin:16px 0 22px;animation:rise .7s var(--ease) both}
+.hero h1 span{display:block;color:#fff}
+.hero p{max-width:35em;font-size:clamp(18px,1.6vw,21px);line-height:1.5}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.seal{width:154px;height:154px;border:4px solid var(--yellow);border-radius:50%;display:grid;place-content:center;text-align:center;color:var(--yellow);background:rgba(0,0,0,.55);font-family:var(--display);font-style:italic;font-weight:800;text-transform:uppercase}
+.seal b{display:block;font-size:66px;line-height:.86}.seal span{font-size:21px;line-height:1.1}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}}
+
+/* intro */
+.intro{padding-block:clamp(72px,10vw,132px) clamp(64px,8vw,104px)}
+.intro-t{max-width:21em;margin:18px auto clamp(44px,6vw,72px);text-align:center;font-size:clamp(25px,3vw,42px);line-height:1.2;font-weight:500}
+.intro-h{text-align:center}
+.collage{display:grid;grid-template-columns:1fr 2fr 1fr;gap:12px;align-items:start}
+.shot{position:relative;margin:0;border-radius:10px;overflow:hidden}
+.collage .a{aspect-ratio:4/5}.collage .b{aspect-ratio:7/6}.collage .c{aspect-ratio:4/5;margin-top:clamp(0px,5vw,72px)}
+.chip{position:absolute;left:10px;right:10px;bottom:10px;padding:11px 13px;border-radius:7px;background:rgba(0,0,0,.76);backdrop-filter:blur(8px);line-height:1.25}
+.chip b{display:block;font:italic 800 25px/1.05 var(--display);color:var(--yellow);text-transform:uppercase}
+.chip span{font-size:15px}
+
+/* services */
+.paper{background:var(--paper);color:#000}
+.svc{padding-block:clamp(72px,9vw,120px);overflow:hidden}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(28px,4vw,44px)}
+.sec-h .title{margin-top:14px}
+.arrows{display:flex;gap:8px}
+.arrows button{width:48px;height:48px;border:0;border-radius:6px;background:#000;color:#fff;cursor:pointer;transition:transform .12s var(--ease),opacity .15s ease}
+.arrows button:active{transform:scale(.94)}.arrows button[disabled]{opacity:.28;cursor:default}
+.arrows svg{width:20px;height:20px;margin:auto;display:block}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(272px,29vw,430px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);padding-inline:var(--gutter);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.card{position:relative;display:block;width:100%;padding:0;border:0;aspect-ratio:4/5;border-radius:10px;overflow:hidden;scroll-snap-align:start;background:#222;color:#fff;text-align:left;cursor:pointer}
+.card img{transition:transform .5s var(--ease)}
+@media(hover:hover){.card:hover img{transform:scale(1.035)}}
+.card-b{position:absolute;left:10px;right:10px;bottom:10px;padding:15px;border-radius:7px;background:rgba(0,0,0,.8);backdrop-filter:blur(8px)}
+.card-b h3{font:italic 800 31px/1.02 var(--display);text-transform:uppercase;color:var(--yellow)}
+.card-b p{margin-top:5px;font-size:15.5px;line-height:1.38}
+.card-b small{display:block;margin-top:9px;font-size:14.5px;font-weight:600}
+
+/* statement */
+.state{position:relative;isolation:isolate;min-height:clamp(480px,48vw,680px);display:flex;align-items:flex-end;overflow:hidden}
+.state>img{position:absolute;inset:0;z-index:-2}
+.state::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#000 3%,rgba(0,0,0,.42) 62%,rgba(0,0,0,.28))}
+.state .wrap{width:100%;padding-block:clamp(44px,6vw,72px);display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.state .title{max-width:12.5em;font-size:clamp(46px,6.8vw,104px)}
+
+/* steps */
+.steps{padding-block:clamp(72px,9vw,120px)}
+.steps .sec-h .title{color:var(--yellow)}
+.s-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0;padding:0;list-style:none}
+.s-grid li{min-height:270px;padding:22px;border-radius:10px;background:var(--panel);display:flex;flex-direction:column;justify-content:space-between;gap:48px}
+.s-n{font:italic 800 58px/1 var(--display);color:var(--yellow)}
+.s-grid h3{font:600 23px/1.2 var(--body)}
+.s-grid p{margin-top:7px;color:var(--muted);font-size:16px;line-height:1.45}
+
+/* why */
+.why{padding-block:clamp(72px,9vw,120px)}
+.w-grid{display:grid;grid-template-columns:1.12fr 1fr;gap:clamp(24px,4vw,64px);align-items:center}
+.w-grid .shot{aspect-ratio:5/4}
+.w-list{margin:0;padding:0;list-style:none}
+.w-list li{display:grid;grid-template-columns:42px 1fr;gap:14px;padding-block:18px;border-top:1px solid #c9c9c3}
+.w-list li:last-child{border-bottom:1px solid #c9c9c3}
+.ico{width:42px;height:42px;border-radius:6px;background:#000;color:var(--yellow);display:grid;place-items:center}
+.ico svg{width:22px;height:22px}
+.w-list h3{font:600 20px/1.25 var(--body)}
+.w-list p{margin-top:3px;color:var(--ink-soft);font-size:16px;line-height:1.45}
+
+/* help form */
+.help{position:relative;padding-block:clamp(68px,9vw,116px);background:linear-gradient(115deg,#000 40%,#3a2d00 76%,#6d5400 100%)}
+.h-grid{display:grid;grid-template-columns:1fr minmax(0,620px);gap:clamp(32px,5vw,80px);align-items:start}
+.help .title{margin:14px 0 18px;color:var(--yellow)}
+.help-l>p{max-width:29em;font-size:19px;line-height:1.5}
+.contacts{display:grid;gap:10px;margin-top:30px;max-width:390px}
+.contacts a{display:flex;align-items:center;gap:13px;padding:11px;border:1px solid rgba(255,255,255,.2);border-radius:8px;text-decoration:none;line-height:1.28;transition:background-color .15s ease}
+@media(hover:hover){.contacts a:hover{background:rgba(255,255,255,.08)}}
+.contacts small{display:block;color:#cfcfca;font-size:14.5px}.contacts b{font-weight:600}
+.form{padding:clamp(18px,2.4vw,30px);border-radius:12px;background:#fff;color:#000}
+.mode{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:8px;background:var(--paper);margin-bottom:20px}
+.mode button{min-height:46px;border:0;border-radius:5px;background:transparent;font-weight:600;cursor:pointer;transition:background-color .16s ease,color .16s ease}
+.mode button[aria-pressed=true]{background:#000;color:var(--yellow)}
+.f{display:block;margin-bottom:16px}
+.f>span,.lg{display:block;margin-bottom:6px;font-size:15.5px;font-weight:600}
+.f input,.f select,.f textarea{width:100%;min-height:48px;padding:11px 12px;border:1px solid #bdbdb6;border-radius:6px;background:#fff;color:#000;font-size:16px}
+.f textarea{min-height:84px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid #000;outline-offset:0;border-color:#000}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+fieldset{border:0;padding:0;margin:0 0 16px}
+legend{padding:0}
+.opts{display:flex;flex-wrap:wrap;gap:7px}
+.opts label{cursor:pointer}
+.opts input{position:absolute;opacity:0;width:1px;height:1px}
+.opts span{display:flex;align-items:center;min-height:42px;padding:7px 13px;border:1px solid #bdbdb6;border-radius:6px;font-size:15.5px;transition:background-color .15s ease,color .15s ease}
+.opts input:checked+span{background:#000;border-color:#000;color:var(--yellow)}
+.opts input:focus-visible+span{outline:3px solid #000;outline-offset:2px}
+.loc{display:inline-flex;align-items:center;gap:7px;min-height:44px;margin-top:7px;padding:6px 12px;border:1px solid #000;border-radius:6px;background:#fff;font-size:15.5px;font-weight:600;cursor:pointer}
+.loc svg{width:18px;height:18px}
+.hint{min-height:1.3em;margin-top:5px;font-size:14.5px;color:var(--ink-soft)}
+.err{min-height:1.4em;margin-bottom:8px;font-size:15.5px;font-weight:600;color:#a80f0f}
+.form .btn{width:100%}
+[hidden]{display:none!important}
+
+/* location */
+.place{padding-block:clamp(68px,8vw,104px)}
+.p-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(24px,4vw,56px);align-items:stretch}
+.p-grid .title{margin:14px 0 22px}
+.rows{margin:0 0 24px}
+.rows div{padding-block:13px;border-top:1px solid #c9c9c3}
+.rows dt{font-size:15px;color:var(--ink-soft)}.rows dd{margin:1px 0 0;font-size:18px;font-weight:500;line-height:1.35}
+.cek{display:inline-block;margin-top:6px;padding:2px 8px;border-radius:4px;background:var(--yellow);font-size:14px;font-weight:600}
+.map{min-height:400px;border:0;width:100%;height:100%;border-radius:10px;background:#d6d6d0}
+
+/* footer */
+.foot{padding-top:clamp(52px,6vw,76px);overflow:hidden}
+.f-grid{display:grid;grid-template-columns:1.5fr repeat(2,1fr);gap:28px;padding-bottom:32px}
+.foot h3{margin-bottom:9px;color:var(--muted);font:500 15px/1.3 var(--body)}
+.foot ul{margin:0;padding:0;list-style:none}.foot li{margin-bottom:6px}
+.foot li a{text-decoration:none}.foot li a:hover{text-decoration:underline}
+.foot .note{max-width:32em;color:#d7d7d2}
+.mark{font:italic 800 clamp(92px,23.4vw,380px)/.78 var(--display);color:var(--yellow);text-transform:uppercase;white-space:nowrap;text-align:center;margin-top:12px;user-select:none}
+.fine{padding-block:18px;color:var(--muted);font-size:14px;line-height:1.5}
+.fine a{color:#d7d7d2}
+
+/* dialog */
+dialog{width:min(520px,calc(100vw - 24px));padding:0;border:0;border-radius:12px;background:#fff;color:#000}
+dialog::backdrop{background:rgba(0,0,0,.72)}
+dialog[open]{animation:pop .2s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}}
+.d-b{padding:22px}
+.d-b h2{font:italic 800 34px/1 var(--display);text-transform:uppercase}
+.d-b>p{margin-top:7px;font-size:16px;line-height:1.42;color:var(--ink-soft)}
+.bubble{margin:14px 0;padding:12px 14px;border-radius:9px 9px 2px 9px;background:#dcf8c6;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15.5px;line-height:1.42;max-height:42vh;overflow:auto}
+.d-b .btn{width:100%}
+
+/* mobile bar */
+.mbar{display:none}
+
+@media(max-width:1000px){
+  .nav{position:absolute;top:68px;left:0;right:0;display:none;flex-direction:column;padding:8px var(--gutter) 14px;background:#000;border-bottom:1px solid #222}
+  .nav.open{display:flex}.nav a{padding:12px 8px;font-size:17px}
+  .burger{display:grid}.head .btn{display:none}
+  .h-grid,.w-grid,.p-grid{grid-template-columns:1fr}
+  .s-grid{grid-template-columns:1fr}.s-grid li{min-height:0;gap:22px}
+  .f-grid{grid-template-columns:1fr 1fr}.f-grid>div:first-child{grid-column:1/-1}
+  .rail{grid-auto-columns:minmax(272px,44vw)}
+}
+@media(max-width:680px){
+  body{padding-bottom:66px}
+  .hero{min-height:calc(100svh - 170px)}
+  .hero .wrap{grid-template-columns:1fr}
+  .seal{position:absolute;top:20px;right:var(--gutter);width:102px;height:102px;border-width:3px}
+  .seal b{font-size:42px}.seal span{font-size:14px}
+  .hero::after{background:linear-gradient(0deg,#000 8%,rgba(0,0,0,.72) 58%,rgba(0,0,0,.3))}
+  .cta .btn{flex:1 1 100%}
+  .collage{grid-template-columns:1fr 1fr}.collage .b{grid-column:1/-1;grid-row:1;aspect-ratio:4/3}.collage .c{margin-top:0}
+  .chip b{font-size:21px}.chip span{font-size:14px}
+  .rail{grid-auto-columns:82vw}
+  .sec-h{flex-wrap:wrap}
+  .two{grid-template-columns:1fr;gap:0}
+  .map{min-height:300px}
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:25;display:grid;grid-template-columns:1fr 1.5fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:#000;border-top:1px solid #2a2a2a}
+  .mbar .btn{min-height:48px;padding:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.3.6-1.1.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.8.8-1.1 1.9-.7 3.1.4 1.3 1.3 2.5 2.6 3.7 2.2 1.9 3.5 2.2 4.3 2.2.9 0 1.9-.6 2.2-1.3.2-.5.2-1 .1-1.1 0-.2-.2-.2-.4-.3Z"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M14.7 6.3a4 4 0 0 0-5 5L3 18a2.1 2.1 0 0 0 3 3l6.7-6.7a4 4 0 0 0 5-5l-2.6 2.6-2.9-.7-.7-2.9z"/></symbol>
+</svg>
+
+<div class="demo" role="note">Contoh desain untuk ditawarkan ke Nino Ride, bukan website resmi. Foto masih foto contoh.</div>
+
+<header class="head">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Nino Ride, ke atas"><span class="bars" aria-hidden="true"><i></i><i></i></span>Nino Ride</a>
+    <nav class="nav" id="nav" aria-label="Menu utama">
+      <a href="#layanan">Layanan</a><a href="#cara">Cara kerja</a><a href="#bantuan">Minta bantuan</a><a href="#lokasi">Lokasi</a>
+    </nav>
+    <a class="btn btn-y" href="#bantuan" data-wa="Halo Nino Ride, saya butuh bantuan untuk mobil saya."><svg aria-hidden="true"><use href="#i-wa"/></svg>Chat WhatsApp</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Buka menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img data-photo="hero" alt="Montir memeriksa mesin mobil di bengkel" fetchpriority="high">
+    <div class="wrap">
+      <div>
+        <span class="tag">Bengkel mobil di Tlogomas, Malang</span>
+        <h1>Mobil mogok?<span>Kami datang.</span></h1>
+        <p>Nino Ride melayani servis mobil injeksi di bengkel, home service, dan bantuan darurat di Malang.</p>
+        <div class="cta">
+          <a class="btn btn-y" href="#bantuan" data-wa="Halo Nino Ride, mobil saya bermasalah dan saya butuh bantuan."><svg aria-hidden="true"><use href="#i-wa"/></svg>Minta bantuan lewat WhatsApp</a>
+          <a class="btn btn-g" data-tel href="#"><svg aria-hidden="true"><use href="#i-tel"/></svg><span data-phone></span></a>
+        </div>
+      </div>
+      <div class="seal" aria-label="Layanan darurat 24 jam"><b>24</b><span>Emergency</span></div>
+    </div>
+  </section>
+
+  <section class="intro wrap" aria-labelledby="intro-t">
+    <div class="intro-h"><span class="tag">Tentang Nino Ride</span></div>
+    <p class="intro-t" id="intro-t">Mobil bisa rewel di mana saja. Bawa ke bengkel kalau masih bisa jalan, atau panggil montir kalau sudah tidak bisa.</p>
+    <div class="collage">
+      <figure class="shot a"><img data-photo="about1" alt="Montir memeriksa mesin mobil" loading="lazy"><figcaption class="chip"><b data-rating></b><span data-rating-note></span></figcaption></figure>
+      <figure class="shot b"><img data-photo="about2" alt="Mobil hitam di dalam bengkel" loading="lazy"></figure>
+      <figure class="shot c"><img data-photo="about3" alt="Montir mengganti oli mobil" loading="lazy"><figcaption class="chip"><b>Home service</b><span>Montir datang ke lokasi</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="svc paper" id="layanan" aria-labelledby="svc-t">
+    <div class="wrap sec-h">
+      <div><span class="tag">Layanan</span><h2 class="title" id="svc-t">Yang bisa<br>kami kerjakan</h2></div>
+      <div class="arrows"><button id="prev" aria-label="Layanan sebelumnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button id="next" aria-label="Layanan berikutnya"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+    </div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Daftar layanan, bisa digeser"></div>
+  </section>
+
+  <section class="state" aria-labelledby="state-t">
+    <img data-photo="state" alt="Beberapa mobil sedang diperbaiki di bengkel" loading="lazy">
+    <div class="wrap">
+      <h2 class="title" id="state-t">Tidak bisa ke bengkel? Biar montir yang ke kamu.</h2>
+      <a class="btn btn-y" href="#bantuan">Kirim lokasi mobil</a>
+    </div>
+  </section>
+
+  <section class="steps wrap" id="cara" aria-labelledby="cara-t">
+    <div class="sec-h"><div><span class="tag">Cara kerja</span><h2 class="title" id="cara-t">Tiga langkah<br>minta bantuan</h2></div></div>
+    <ol class="s-grid">
+      <li><span class="s-n" aria-hidden="true">1</span><div><h3>Ceritakan masalahnya</h3><p>Pilih keluhan mobil dan isi lokasimu di form atau lewat WhatsApp.</p></div></li>
+      <li><span class="s-n" aria-hidden="true">2</span><div><h3>Tunggu konfirmasi</h3><p>Admin membalas untuk memastikan kebutuhan dan waktunya.</p></div></li>
+      <li><span class="s-n" aria-hidden="true">3</span><div><h3>Mobil ditangani</h3><p>Montir datang ke lokasi, atau mobil dibawa ke bengkel di Tlogomas.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="why paper" aria-labelledby="why-t">
+    <div class="wrap">
+      <div class="sec-h"><div><span class="tag">Kenapa Nino Ride</span><h2 class="title" id="why-t">Saat mobil<br>butuh bantuan</h2></div></div>
+      <div class="w-grid">
+        <figure class="shot"><img data-photo="why" alt="Bengkel dengan tumpukan ban" loading="lazy"></figure>
+        <ul class="w-list">
+          <li><span class="ico"><svg aria-hidden="true"><use href="#i-bolt"/></svg></span><div><h3>Layanan darurat 24 jam</h3><p>Hubungi kapan saja saat mobil bermasalah.</p></div></li>
+          <li><span class="ico"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><div><h3>Home service</h3><p>Mobil bisa ditangani langsung di lokasimu.</p></div></li>
+          <li><span class="ico"><svg aria-hidden="true"><use href="#i-gear"/></svg></span><div><h3>Manual dan matic</h3><p>Ganti oli transmisi untuk kedua jenis mobil.</p></div></li>
+          <li><span class="ico"><svg aria-hidden="true"><use href="#i-wa"/></svg></span><div><h3>Mudah dihubungi</h3><p>Cukup lewat telepon atau WhatsApp.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="help" id="bantuan" aria-labelledby="help-t">
+    <div class="wrap h-grid">
+      <div class="help-l">
+        <span class="tag">Minta bantuan</span>
+        <h2 class="title" id="help-t">Ceritakan masalah mobilmu</h2>
+        <p>Isi seperlunya. Pesanmu tersusun otomatis, tinggal dikirim lewat WhatsApp.</p>
+        <div class="contacts">
+          <a data-tel href="#"><span class="ico"><svg aria-hidden="true"><use href="#i-tel"/></svg></span><span><small>Telepon</small><b data-phone></b></span></a>
+          <a href="#lokasi"><span class="ico"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><span><small>Bengkel</small><b>Jl. Tlogo Agung No. 42, Tlogomas</b></span></a>
+        </div>
+      </div>
+      <form class="form" id="form" novalidate>
+        <div class="mode" role="group" aria-label="Jenis bantuan">
+          <button type="button" data-mode="darurat" aria-pressed="true">Darurat sekarang</button>
+          <button type="button" data-mode="servis" aria-pressed="false">Jadwalkan servis</button>
+        </div>
+        <div class="two">
+          <label class="f"><span>Nama</span><input name="nama" autocomplete="name" placeholder="Nama kamu"></label>
+          <label class="f"><span>Mobil</span><input name="mobil" placeholder="Merek dan tipe"></label>
+        </div>
+        <fieldset id="f-keluhan"><legend class="lg">Apa masalahnya?</legend><div class="opts" id="keluhan"></div></fieldset>
+        <label class="f" id="f-layanan" hidden><span>Layanan</span><select name="layanan" id="pilih-layanan"></select></label>
+        <label class="f" id="f-tanggal" hidden><span>Tanggal yang diinginkan</span><input type="date" name="tanggal"></label>
+        <div class="f" id="f-lokasi"><label for="lokasi-in"><span class="lg">Lokasi mobil</span></label><textarea name="lokasi" id="lokasi-in" placeholder="Nama jalan atau patokan terdekat"></textarea>
+          <button class="loc" type="button" id="geo"><svg aria-hidden="true"><use href="#i-pin"/></svg>Pakai lokasi saya</button>
+          <div class="hint" id="geo-hint" aria-live="polite"></div></div>
+        <div class="err" id="err" role="alert"></div>
+        <button class="btn btn-k" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Kirim lewat WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="place paper" id="lokasi" aria-labelledby="lok-t">
+    <div class="wrap p-grid">
+      <div>
+        <span class="tag">Lokasi</span>
+        <h2 class="title" id="lok-t">Datang ke bengkel</h2>
+        <dl class="rows">
+          <div><dt>Alamat</dt><dd>Jl. Tlogo Agung No. 42, Tlogomas, Kota Malang 65144</dd></div>
+          <div><dt>Jam bengkel</dt><dd><span data-hours></span><br><span class="cek">Perlu dikonfirmasi pemilik</span></dd></div>
+          <div><dt>Layanan darurat</dt><dd>24 jam</dd></div>
+        </dl>
+        <a class="btn btn-k" data-maps target="_blank" rel="noopener" href="#"><svg aria-hidden="true"><use href="#i-pin"/></svg>Buka di Google Maps</a>
+      </div>
+      <iframe class="map" title="Peta lokasi Bengkel Nino Ride" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-map></iframe>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap f-grid">
+    <div><h3>Bengkel Mobil Nino Ride</h3><p class="note">Servis mobil injeksi, ganti oli, home service, dan layanan darurat di Malang.</p></div>
+    <div><h3>Menu</h3><ul><li><a href="#layanan">Layanan</a></li><li><a href="#cara">Cara kerja</a></li><li><a href="#bantuan">Minta bantuan</a></li><li><a href="#lokasi">Lokasi</a></li></ul></div>
+    <div><h3>Kontak</h3><ul><li><a data-tel href="#"><span data-phone></span></a></li><li><a data-ig target="_blank" rel="noopener" href="#">Instagram @ninoride</a></li></ul></div>
+  </div>
+  <div class="mark" aria-hidden="true">Nino Ride</div>
+  <div class="wrap fine">Contoh desain, bukan website resmi Bengkel Nino Ride. Foto contoh dari <a href="https://unsplash.com/license" target="_blank" rel="noopener">Unsplash</a> oleh Dextar Studio, Kate Ibragimova, Jimmy Nilsson Masth, Joseph Pillado, Tim Mossholder, Chris Kursikowski, Erik Mclean, Winston Chen, dan Vinicius Amano.</div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-g" data-tel href="#"><svg aria-hidden="true"><use href="#i-tel"/></svg>Telepon</a>
+  <a class="btn btn-y" href="#bantuan" data-wa="Halo Nino Ride, mobil saya bermasalah dan saya butuh bantuan."><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlg-t">
+  <div class="d-b">
+    <h2 id="dlg-t">Pesan siap dikirim</h2>
+    <p>Ini mode demo, jadi pesan belum dikirim ke bengkel. Di website asli, tombol ini langsung membuka WhatsApp.</p>
+    <div class="bubble" id="bubble"></div>
+    <button class="btn btn-k" id="dlg-x" type="button">Tutup</button>
+  </div>
+</dialog>
+
+<script>
+/* ============ BAGIAN YANG MUDAH DIEDIT ============ */
+const DATA = {
+  demo: true, // ganti ke false kalau sudah disetujui: tombol langsung membuka WhatsApp
+  whatsapp: "6282257595287",
+  telepon: "0822-5759-5287",
+  instagram: "https://www.instagram.com/ninoride/",
+  jamBengkel: "Senin sampai Sabtu 08.30 sampai 21.00, Minggu tutup",
+  rating: "4,9 di Google",
+  ratingNote: "Dari 170 ulasan",
+  lat: -7.9380935, lng: 112.6017382,
+  layanan: [
+    {nama:"Servis rutin", isi:"Perawatan berkala supaya mobil tetap enak dipakai.", foto:"svc1"},
+    {nama:"Ganti oli mesin", isi:"Penggantian oli mesin untuk perawatan harian mobil.", foto:"svc2"},
+    {nama:"Oli transmisi", isi:"Ganti oli transmisi untuk mobil manual dan matic.", foto:"svc3"},
+    {nama:"Mobil injeksi", isi:"Penanganan untuk mobil bermesin injeksi.", foto:"svc4"},
+    {nama:"Perbaikan mesin", isi:"Untuk mesin yang bermasalah atau terasa tidak normal.", foto:"svc5"},
+    {nama:"Kaki-kaki", isi:"Perbaikan bagian kaki-kaki mobil.", foto:"svc6"}
+  ],
+  keluhan: ["Tidak mau hidup","Mesin panas atau berasap","Mati di jalan","Bunyi aneh","Kaki-kaki bermasalah","Lainnya"]
+};
+/* Ganti ID di bawah dengan foto asli bengkel: isi alamat file, misalnya "foto/bengkel.jpg" */
+const FOTO = {
+  hero:"1771340012319-0b4fca008b54", about1:"1625047509248-ec889cbff17f", about2:"1625047509168-a7026f36de04",
+  about3:"1643700973089-baa86a1ab9ee", state:"1767681092416-bccf9410bda4", why:"1675034743372-672c3c3f8377",
+  svc1:"1711386689622-1cda23e10217", svc2:"1771340742493-52fbd5476ccb", svc3:"1642075223291-f9ec545889fa",
+  svc4:"1747511578112-3d21e8b3d5d7", svc5:"1487754180451-c456f719a1fc", svc6:"1760317890322-364a810cd4da"
+};
+/* ================================================== */
+
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const src=(k,w=1600)=>{const v=FOTO[k];return /[/.]/.test(v)?v:`https://images.unsplash.com/photo-${v}?auto=format&fit=crop&w=${w}&q=70`};
+$$("[data-photo]").forEach(i=>i.src=src(i.dataset.photo,i.dataset.photo==="hero"||i.dataset.photo==="state"?2000:1100));
+$$("[data-phone]").forEach(e=>e.textContent=DATA.telepon);
+$$("[data-tel]").forEach(e=>e.href="tel:+"+DATA.whatsapp);
+$$("[data-ig]").forEach(e=>e.href=DATA.instagram);
+$$("[data-hours]").forEach(e=>e.textContent=DATA.jamBengkel);
+$("[data-rating]").textContent=DATA.rating; $("[data-rating-note]").textContent=DATA.ratingNote;
+$("[data-maps]").href=`https://www.google.com/maps/search/?api=1&query=${DATA.lat},${DATA.lng}`;
+$("[data-map]").src=`https://www.google.com/maps?q=${DATA.lat},${DATA.lng}&z=16&output=embed`;
+
+/* kirim ke WhatsApp, atau pratinjau saat demo */
+const dlg=$("#dlg");
+function kirim(pesan){
+  if(DATA.demo){$("#bubble").textContent=pesan;dlg.showModal();return}
+  window.open(`https://wa.me/${DATA.whatsapp}?text=${encodeURIComponent(pesan)}`,"_blank","noopener");
+}
+$("#dlg-x").onclick=()=>dlg.close();
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+document.addEventListener("click",e=>{const a=e.target.closest("[data-wa]");if(a){e.preventDefault();kirim(a.dataset.wa)}});
+
+/* menu */
+const burger=$("#burger"),nav=$("#nav");
+burger.onclick=()=>{const o=nav.classList.toggle("open");burger.setAttribute("aria-expanded",o);burger.setAttribute("aria-label",o?"Tutup menu":"Buka menu")};
+nav.addEventListener("click",e=>{if(e.target.tagName==="A"){nav.classList.remove("open");burger.setAttribute("aria-expanded","false");burger.setAttribute("aria-label","Buka menu")}});
+
+/* layanan */
+const rail=$("#rail");
+DATA.layanan.forEach(l=>{
+  const b=document.createElement("button");b.type="button";b.className="card";b.dataset.wa=`Halo Nino Ride, saya mau tanya soal ${l.nama.toLowerCase()}.`;
+  const img=new Image();img.src=src(l.foto,900);img.alt="";img.loading="lazy";
+  const box=document.createElement("span");box.className="card-b";box.style.display="block";
+  const h=document.createElement("h3");h.textContent=l.nama;const p=document.createElement("p");p.textContent=l.isi;const s=document.createElement("small");s.textContent="Tanya lewat WhatsApp";
+  box.append(h,p,s);b.append(img,box);rail.append(b);
+});
+const step=()=>rail.querySelector(".card").getBoundingClientRect().width+12;
+const sync=()=>{$("#prev").disabled=rail.scrollLeft<4;$("#next").disabled=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-4};
+$("#prev").onclick=()=>rail.scrollBy({left:-step(),behavior:"smooth"});
+$("#next").onclick=()=>rail.scrollBy({left:step(),behavior:"smooth"});
+rail.addEventListener("scroll",sync,{passive:true});addEventListener("resize",sync);sync();
+
+/* form */
+const form=$("#form");let mode="darurat",titik="";
+DATA.keluhan.forEach(k=>{const l=document.createElement("label"),i=document.createElement("input"),s=document.createElement("span");i.type="radio";i.name="keluhan";i.value=k;s.textContent=k;l.append(i,s);$("#keluhan").append(l)});
+DATA.layanan.forEach(l=>$("#pilih-layanan").add(new Option(l.nama,l.nama)));
+form.tanggal.min=new Date().toISOString().slice(0,10);
+$$("[data-mode]").forEach(b=>b.onclick=()=>{
+  mode=b.dataset.mode;$$("[data-mode]").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  const d=mode==="darurat";$("#f-keluhan").hidden=!d;$("#f-layanan").hidden=d;$("#f-tanggal").hidden=d;$("#f-lokasi").hidden=!d;$("#err").textContent="";
+});
+$("#geo").onclick=()=>{
+  const h=$("#geo-hint");
+  if(!navigator.geolocation){h.textContent="Perangkat ini tidak mendukung lokasi otomatis. Tulis alamat atau patokan.";return}
+  h.textContent="Mengambil lokasi...";
+  navigator.geolocation.getCurrentPosition(p=>{titik=`https://www.google.com/maps?q=${p.coords.latitude.toFixed(6)},${p.coords.longitude.toFixed(6)}`;h.textContent="Lokasi ditambahkan ke pesan."},
+    ()=>{h.textContent="Lokasi tidak bisa diambil. Tulis alamat atau patokan."},{enableHighAccuracy:true,timeout:10000});
+};
+form.addEventListener("submit",e=>{
+  e.preventDefault();const f=new FormData(form),v=k=>(f.get(k)||"").toString().trim(),err=$("#err");err.textContent="";
+  let m=[];
+  if(mode==="darurat"){
+    if(!v("keluhan")){err.textContent="Pilih masalah mobilmu dulu.";$("#keluhan input").focus();return}
+    if(!v("lokasi")&&!titik){err.textContent="Isi lokasi mobil, atau pakai tombol lokasi.";$("#lokasi-in").focus();return}
+    m=["Halo Nino Ride, saya butuh bantuan darurat."];
+    if(v("nama"))m.push("Nama: "+v("nama"));if(v("mobil"))m.push("Mobil: "+v("mobil"));
+    m.push("Masalah: "+v("keluhan"));if(v("lokasi"))m.push("Lokasi: "+v("lokasi"));if(titik)m.push("Titik peta: "+titik);
+  }else{
+    m=["Halo Nino Ride, saya mau jadwalkan servis."];
+    if(v("nama"))m.push("Nama: "+v("nama"));if(v("mobil"))m.push("Mobil: "+v("mobil"));
+    m.push("Layanan: "+v("layanan"));
+    if(v("tanggal"))m.push("Tanggal: "+new Date(v("tanggal")+"T00:00").toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric"}));
+  }
+  kirim(m.join("\n"));
+});
+</script>
+</body>
+</html>
